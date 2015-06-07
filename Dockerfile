@@ -1,10 +1,10 @@
 # Squid
+FROM debian:jessie
 MAINTAINER Rudy Gevaert <Rudy.Gevaert@UGent.be>
 ENV SQUID_VERSION=3.5.5
 LABEL Description="This image is used to start Squid a caching proxy that was compiled" Version="${SQUID_VERSION}"
 
 
-FROM debian:jessie
 RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get upgrade -yq --no-install-recommends && \
     DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends wget build-essential && \
